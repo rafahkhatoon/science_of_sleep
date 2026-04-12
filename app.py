@@ -2,7 +2,6 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Science of Sleep",
-    page_icon="🌙",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -113,7 +112,7 @@ from utils.insights import generate_insights
 
 # ── Sidebar ──────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("### 🌙 Science of Sleep")
+    st.markdown("###  Science of Sleep")
     st.markdown("---")
     uploaded = st.file_uploader(
         "Upload your dataset (CSV)",
@@ -163,8 +162,8 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 # ── Main tabs ─────────────────────────────────────────────────────────────────
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-    "📊 Overview", "🔬 Clustering", "🔗 Correlations",
-    "💼 By Occupation", "🤖 ML Model", "💡 Insights"
+    " Overview", " Clustering", " Correlations",
+    " By Occupation", " ML Model", " Insights"
 ])
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -202,7 +201,7 @@ with tab1:
         use_container_width=True
     )
 
-    with st.expander("📋 Raw data preview"):
+    with st.expander(" Raw data preview"):
         st.dataframe(df_raw.head(50), use_container_width=True)
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -382,7 +381,7 @@ with tab5:
 
     # Interactive prediction
     st.markdown("---")
-    st.markdown("### 🔮 Predict your sleep quality")
+    st.markdown("###  Predict your sleep quality")
     p1, p2, p3, p4 = st.columns(4)
     u_stress = p1.slider("Stress level", 1, 10, 5)
     u_duration = p2.slider("Sleep duration (h)", 5.0, 9.0, 7.0, 0.1)
@@ -399,9 +398,9 @@ with tab5:
     prob = rf_model.predict_proba(user_input)[0]
 
     if pred == "High Sleep Quality":
-        st.success(f"✅ Predicted: **High Sleep Quality** — confidence {prob.max()*100:.0f}%")
+        st.success(f" Predicted: **High Sleep Quality** — confidence {prob.max()*100:.0f}%")
     else:
-        st.error(f"⚠️ Predicted: **Low Sleep Quality** — confidence {prob.max()*100:.0f}%")
+        st.error(f" Predicted: **Low Sleep Quality** — confidence {prob.max()*100:.0f}%")
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # TAB 6 — INSIGHTS
@@ -410,7 +409,7 @@ with tab6:
     st.subheader("Data-Driven Insights & Recommendations")
     insights = generate_insights(df)
     for ins in insights:
-        icon = ins.get("icon", "💡")
+        icon = ins.get("icon")
         color = ins.get("color", "#7c6fe0")
         st.markdown(f"""
         <div style="background:rgba(255,255,255,0.04);border-left:3px solid {color};
