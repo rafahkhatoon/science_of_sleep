@@ -1,10 +1,10 @@
-# 🌙 Science of Sleep — Data Mining Dashboard
+#  Science of Sleep — Data Mining Dashboard
 
 A full-stack **Streamlit** dashboard for analysing sleep health data using K-Means clustering, correlation analysis, and a Random Forest classifier.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 sleep_project/
@@ -22,7 +22,7 @@ sleep_project/
 
 ---
 
-## ⚙️ Setup
+##  Setup
 
 ### 1. Clone / copy project files
 ```bash
@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Run the app
+##  Run the app
 
 ```bash
 streamlit run app.py
@@ -53,7 +53,7 @@ The app opens at **http://localhost:8501**
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 Download the **Sleep Health and Lifestyle Dataset** from Kaggle:
 > https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
@@ -64,7 +64,7 @@ The app ships with a built-in 100-row sample so you can explore without uploadin
 
 ---
 
-## 🧠 Features
+##  Features
 
 | Tab | What it does |
 |-----|-------------|
@@ -77,7 +77,7 @@ The app ships with a built-in 100-row sample so you can explore without uploadin
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Streamlit** — web app framework
 - **Plotly** — all interactive visualisations
@@ -86,7 +86,7 @@ The app ships with a built-in 100-row sample so you can explore without uploadin
 
 ---
 
-## 📌 Notes
+##  Notes
 
 - The sidebar lets you filter by gender and age range in real time
 - The ML tab includes a live prediction widget — enter your own stats and get a sleep quality prediction
