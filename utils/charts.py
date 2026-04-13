@@ -140,6 +140,14 @@ def plot_feature_importance(model, feature_names):
     return _apply_layout(fig, "Feature Importance — Random Forest", height=360)
 
 
+# ── Helper ────────────────────────────────────────────────────────────────────
+def hex_to_rgba(hex_color: str, alpha: float = 0.13) -> str:
+    """Convert a #rrggbb hex string to rgba(r,g,b,alpha)."""
+    h = hex_color.lstrip("#")
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+
+
 # ── 6. Radar chart ────────────────────────────────────────────────────────────
 def plot_radar(profiles, n_clusters):
     cats = ["Sleep Duration", "Sleep Quality", "Physical Activity", "Daily Steps", "Low Stress"]
@@ -159,7 +167,7 @@ def plot_radar(profiles, n_clusters):
             theta=cats + [cats[0]],
             name=f"Cluster {i+1}",
             fill="toself",
-            fillcolor=cols[i] + "22",
+            fillcolor=hex_to_rgba(cols[i]),
             line=dict(color=cols[i], width=2),
             marker=dict(color=cols[i], size=6)
         ))
