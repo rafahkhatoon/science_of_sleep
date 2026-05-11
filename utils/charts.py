@@ -65,7 +65,7 @@ def plot_donut(df, col, title):
 def plot_scatter_quality_stress(df, color_col="Sleep Disorder"):
     if color_col == "Cluster":
         color_map = {
-            str(i): COLORS[i] for i in range(10)
+           str(i): COLORS[i % len(COLORS)] for i in range(10)
         }
         df = df.copy()
         df["Cluster"] = df["Cluster"].astype(str)
